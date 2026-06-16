@@ -41,5 +41,5 @@ func (sem *semaphore) AcquireWithTimeout(timeout time.Duration) bool {
 }
 
 func (sem *semaphore) Available() int {
-	return len(sem.ch)
+	return cap(sem.ch) - len(sem.ch)
 }
